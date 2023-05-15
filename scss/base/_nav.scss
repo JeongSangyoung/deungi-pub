@@ -1,0 +1,45 @@
+@use 'mixins';
+
+#nav {
+  background: #2C324B;
+  height: 6rem;
+
+  @include mixins.flex('row', '', 'center', 0);
+
+  > .container {
+    @include mixins.flex('row', 'space-between', 'center', 0);
+   
+
+    ul {
+      color: #FAFAFA;
+      @include mixins.flex('row', 'center', 'center', 4rem);
+    }
+  }
+
+  .nav-item {
+    cursor: pointer;
+    @include mixins.mq-breakpoint-down(sm) {
+      display: none;
+    }
+  }
+
+  .nav-btns {
+    @include mixins.flex('row', 'center', 'center', 0.8rem);
+    img {
+      display: none;
+    cursor: pointer;
+      @include mixins.mq-breakpoint-down(sm) {
+        display: block;
+      }
+    }
+  }
+
+  .nav-btn {
+    border-radius: 1.7rem;
+    height: 3.4rem;
+    width: 8.4rem;
+    background: #4878F5;
+    color: #FAFAFA;
+    margin-left: 6rem;
+  }
+}

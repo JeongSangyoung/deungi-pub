@@ -1,0 +1,14 @@
+@use '../Page_main/layout/main';
+
+@use '../base/mixins';
+
+.container {
+  max-width: 123.6rem;
+  margin: 0 auto;
+  width: 100%;
+
+  padding: 0 3rem;
+  @include mixins.mq-breakpoint-down(sm) {
+    padding: 0 1.6rem;
+  }
+}

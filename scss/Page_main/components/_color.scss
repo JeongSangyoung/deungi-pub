@@ -1,0 +1,21 @@
+@use '../../base/index' as base;
+
+.color-text-blue {
+  color: #2F5DD4 !important;
+}
+
+.color-text-red {
+  color: #EA3727 !important;
+}
+
+.color-button-blue {
+  color: #1F6FE8 !important;
+}
+
+.color-button-dark, .color-text-dark {
+  color: #616161 !important;
+}
+
+.color-button-light, .color-text-light {
+  color: #F5F5F5 !important;
+}

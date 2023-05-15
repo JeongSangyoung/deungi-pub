@@ -1,0 +1,140 @@
+@use 'mixins';
+
+footer {
+  .footer-t {
+    border-top: 1px solid rgba(238, 238, 238, 1);
+    border-bottom: 1px solid rgba(238, 238, 238, 1);
+  }
+  .footer-t .container {
+    @include mixins.flex('row', 'space-between', 'center', '');
+    padding-top: 1.2rem;
+    padding-bottom: 1.2rem;
+    .t-left {
+      @include mixins.flex('row', '', 'center', 1.6rem);
+      font-size: 13px;
+      line-height: 18.2px;
+      font-weight: 500;
+    }
+    .t-right {
+      @include mixins.flex('row', '', 'center', 0.8rem);
+      img { 
+        width: 3.4rem; 
+        height: 3.4rem;
+      }
+    }
+  }
+
+  .footer-m {
+    display: flex;
+    padding: 4.8rem 0;
+    border-bottom: 1px solid rgba(224, 224, 224, 1);
+    @include mixins.mq-breakpoint-down(xs) {
+      flex-direction: column;
+    }
+    .m-title {
+      color: rgba(158, 158, 158, 1);
+      font-weight: 800;
+      font-family: 'GmarketSans';
+      font-size: 1.5rem;
+      line-height: 1.5rem;
+    }
+    .m-left {
+      flex-basis: 34%;
+      @include mixins.mq-breakpoint-down(sm) {
+        flex-basis: 50%;
+      }
+      @include mixins.mq-breakpoint-down(xs) {
+        flex-basis: unset;
+        margin-bottom: 3.2rem;
+      }
+
+      .m-content {
+        color: rgba(33, 33, 33, 1);
+        font-size: 12px;
+        line-height: 18px;
+        line-height: 150%;
+        margin-top: 1.2rem;
+        margin-bottom: 2.4rem;
+      }
+
+      .m-btn {
+        @include mixins.flex('row', '', '', 1rem);
+        button {
+          @include mixins.flex('row', 'center', 'center', 0);
+          font-family: 'GmarketSans';
+          font-style: normal;
+          font-weight: 500;
+          font-size: 14px;
+          padding: 0 1.6rem;
+          width: 20rem;
+          // width: 55%;
+          height: 44px; 
+
+          // @include
+        }
+        .to-blog {
+          background: #616161;
+          border-radius: 4px;
+          color: #F5F5F5;
+        }
+        .to-tip {
+          background: #616161;
+          border-radius: 4px;
+          // opacity: 0.1;
+          color: #F5F5F5;
+        }
+      }
+    }
+
+    .m-right {
+      flex-basis: 66%;
+      @include mixins.mq-breakpoint-down(sm) {
+        flex-basis: 50%;
+        padding-left: 6.2rem;
+      }
+      @include mixins.mq-breakpoint-down(xs) {
+        flex-basis: unset;
+        padding-left: unset;
+      }
+      padding-left: 12.4rem;
+
+      .m-number {
+        font-family: 'GmarketSans';
+        font-weight: 500;
+        font-size: 1.8rem;
+        line-height: 1.8rem;
+        color: #212121;
+        margin-top: 1.2rem;
+        margin-bottom: 1.2rem;
+      }
+
+      .m-time {
+        font-weight: 500;
+        font-size: 1.2rem;
+        color: #616161;
+        line-height: 150%;
+      }
+
+    }
+  }
+
+  .footer-b {
+    padding: 4.8rem 0;
+    .b-content {
+      color: #616161;
+      line-height: 150%;
+      word-break: keep-all;
+      span {
+        display: inline-block;
+      }
+    }
+    .b-copyright {
+      margin-top: 2.4rem;
+      color: #9E9E9E;
+    }
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 150%;
+  }
+  
+}

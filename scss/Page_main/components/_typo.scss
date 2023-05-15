@@ -1,0 +1,66 @@
+/*
+
+Gmarket {
+  48: 메인1
+  24: 메인3-카드-price
+  20: 메인3-카드-title
+  18: 메인3-타이틀위, 메인5-title위
+  14: 메인1버튼, 메인2카드-content, 메인3카드-action
+  
+  32: 메인2-title, 메인3-title, 메인4-title, 메인5-title
+
+
+}
+
+Noto {
+  18: 메인2-카드-title
+  16-content: 메인1, 메인2-content, 메인3-content, 메인3-카드-항목의title, 메인4-content, 메인5-content, 메인5-카드-content, 메인6-카드-content
+  14: 메인3-카드-항목의content
+  12: 메인1-리뷰, 메인5-카드-chip, 메인6-카드-price
+
+}
+
+
+*/
+
+.title-first {
+  font-family: 'GmarketSans';
+  font-size: clamp(3.2rem, 3.2vw, 4.8rem);
+  line-height: 130%;
+  color: #212121;
+}
+
+.title-1 {
+  font-family: 'GmarketSans';
+  font-size: clamp(2.4rem, 2.4vw, 4.8rem);
+  line-height: 130%;
+  color: #212121;
+}
+
+.title-2 {
+  font-family: 'GmarketSans';
+  font-size: 1.8rem;
+  line-height: 150%;
+  color: #212121;
+}
+
+.content-1 {
+  font-family: 'NotoSans';
+  font-size: clamp(1.4rem, 1.2vw, 1.6rem);
+  line-height: 150%;
+  color: #616161;
+}
+
+.content-2 {
+  font-family: 'NotoSans';
+  font-size: 1.4rem;
+  line-height: 150%;
+  color: #616161;
+}
+
+.content-3 {
+  font-family: 'NotoSans';
+  font-size: 1.2rem;
+  line-height: 150%;
+  color: #616161;
+}

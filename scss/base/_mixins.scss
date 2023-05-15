@@ -1,0 +1,131 @@
+// ALIGN
+@mixin flex(
+  $flexDirection: 'row',
+  $arrangementHorizontal: 'start',
+  $arrangementVertical: 'start',
+  $gap: 0
+) {
+  display: flex;
+
+  @if $flexDirection == 'row' {
+    flex-direction: row;
+  } @else {
+    flex-direction: column;
+  }
+
+  @if $arrangementHorizontal == 'start' {
+    justify-content: flex-start;
+  } @else if $arrangementHorizontal == 'center' {
+    justify-content: center;
+  } @else if $arrangementHorizontal == 'end' {
+    justify-content: flex-end;
+  } @else if $arrangementHorizontal == 'space-between' {
+    justify-content: space-between;
+  } @else if $arrangementHorizontal == 'space-around' {
+    justify-content: space-around;
+  } @else {
+    justify-content: flex-start;
+  }
+
+  @if $arrangementVertical == 'start' {
+    align-items: flex-start;
+  } @else if $arrangementVertical == 'center' {
+    align-items: center;
+  } @else if $arrangementVertical == 'end' {
+    align-items: flex-end;
+  }  @else if $arrangementVertical == 'space-between' {
+    align-items: space-between;
+  } @else if $arrangementVertical == 'space-around' {
+    align-items: space-around;
+  } @else {
+    align-items: flex-start;
+  }
+
+  gap: $gap;
+}
+
+// GRID
+$breakpoints: (
+  xs: 600px,
+  sm: 960,
+  md: 1264,
+  lg: 1903,
+);
+$breakpoints-next: (
+  xs: xs,
+  sm: sm,
+  md: md,
+  lg: lg,
+);
+
+
+// min-width 이상 구간
+@mixin mq-breakpoint-up($bp) {
+  $min-value: map-get($breakpoints, $bp);
+  @if $bp == xxs {
+    @content;
+  } @else {
+    @media screen and (min-width: $min-value) {
+      @content;
+    }
+  }
+}
+
+// max-width 이하 구간
+@mixin mq-breakpoint-down($bp) {
+  $max-value: 0px;
+  @if $bp == xxs {
+    @error 'Breakpoint xxs isn\'t available.';
+  } @else {
+    $max-value: map-get($breakpoints, $bp) - 0.02px;
+  }
+  @media screen and (max-width: $max-value) {
+    @content;
+  }
+}
+
+// max-width 이하 구간
+@mixin mq-breakpoint-only($bp) {
+  $min-value: map-get($breakpoints, $bp);
+  $max-value: 0px;
+  @if $bp == xxs {
+    $max-value: map-get($breakpoints, $bp) - 0.02px;
+    @media screen and (max-width: $max-value) {
+      @content;
+    }
+  } @else if $bp == xxl {
+    $min-value: map-get($breakpoints, xxl);
+    @media screen and (min-width: $min-value) {
+      @content;
+    }
+  } @else {
+    $bp-next: map-get($breakpoints-next, $bp);
+    $max-value: map-get($breakpoints, $bp-next) - 0.02px;
+    @media screen and (min-width: $min-value) and (max-width: $max-value) {
+      @content;
+    }
+  }
+}
+
+// 두 breakpoint 사이
+@mixin mq-breakpoint-between($bp-min, $bp-max) {
+  $min-value: map-get($breakpoints, $bp-min);
+  $max-value: map-get($breakpoints, $bp-max) - 0.02px;
+  @media screen and (min-width: $min-value) and (max-width: $max-value) {
+    @content;
+  }
+}
+
+@mixin animate($animation, $duration, $method, $time) {
+  @if $time == '' {
+    animation: $animation $duration $method;
+  } @else {
+    animation: $animation $duration $method $time;
+  }
+  
+}
+@mixin keyframes($name) {
+  @keyframes #{$name} {
+    @content;
+  }
+}
