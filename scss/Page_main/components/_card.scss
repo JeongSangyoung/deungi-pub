@@ -4,8 +4,9 @@
   text-align: center;
   border-radius: 12px;
   padding-top: 4rem;
-  min-height: 40rem;
   min-width: 25rem;
+  min-height: 50rem;
+  padding-bottom: 7rem;
   @include base.mq-breakpoint-down(sm) {
     max-width: 42rem;
     width: 100%;
@@ -82,6 +83,9 @@
     background: #1F6FE8;
     border: 2px solid #1F6FE8;
     color: #FAFAFA;
+    position: absolute;
+    bottom: 0%;
+    left: 0%;
   }
 }
 .cr {
@@ -93,6 +97,19 @@
     left: 0%;
     background: #1f6fe81f;
     color: #1F6FE8;
+    border: 2px solid transparent
+
+  }
+}
+.co {
+  border: 1px solid rgba(33, 178, 91, 1);
+  position: relative;
+  .service-btn {
+    position: absolute;
+    bottom: 0%;
+    left: 0%;
+    background: rgba(33, 178, 91, 1);
+    color: rgba(250, 250, 250, 1);
     border: 2px solid transparent
 
   }
