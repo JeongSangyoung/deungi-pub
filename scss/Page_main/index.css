@@ -1127,6 +1127,88 @@ Noto {
   list-style-type: disc;
 }
 
+#f1 input {
+  display: none;
+}
+#f1 .li-cont {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 0;
+  padding: 3.2rem 2.4rem;
+  background: #f3f7fa;
+  border-top: 2px solid rgb(238, 238, 238);
+}
+#f1 .faq-label {
+  width: 100%;
+}
+#f1 .faq-title {
+  cursor: pointer !important;
+  font-family: "GmarketSans";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 1.6rem;
+  line-height: 130%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0;
+}
+#f1 .faq-title .title-l {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 1.6rem;
+}
+#f1 .faq-content {
+  max-height: 0;
+  visibility: hidden;
+  overflow: hidden;
+  padding-left: 5.6rem;
+}
+#f1 input[type=checkbox]:checked ~ .faq-content {
+  padding-top: 0.4rem;
+  max-height: 100vh;
+  height: auto;
+  visibility: visible;
+  opacity: 1;
+  transition: all 2s ease;
+}
+#f1 input[type=checkbox]:checked ~ .faq-content * {
+  opacity: 1;
+}
+#f1 .img-v {
+  transform: rotate(180deg);
+}
+#f1 input[type=checkbox]:checked + label .img-v {
+  transform: rotate(0);
+}
+#f1 .more {
+  color: #1F6FE8;
+  cursor: pointer;
+}
+#f1 .ccard-cont {
+  margin-bottom: 1.2rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 1.2rem;
+}
+#f1 .ccard-cont .ccard1 {
+  width: 40%;
+}
+#f1 .ccard-cont .ccard2 {
+  width: 40%;
+}
+#f1 .cert {
+  margin-top: 2.4rem;
+  width: 90%;
+}
+
 .container {
   max-width: 123.6rem;
   margin: 0 auto;

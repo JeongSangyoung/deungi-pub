@@ -1,0 +1,76 @@
+@use "../../base/index" as base;
+@use "../components/index";
+
+#f1 {
+  input { display: none; }
+  .li-cont {
+    @include base.flex('column', 'center', '', 0);
+    padding: 3.2rem 2.4rem;
+    background: #f3f7fa;
+    border-top: 2px solid rgba(238, 238, 238, 1);
+  }
+
+  .faq-label {
+    width: 100%;
+    // padding-bottom: 2.4rem;
+  }
+  
+  .faq-title {
+    cursor: pointer !important;
+    font-family: 'GmarketSans';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 1.6rem;
+    line-height: 130%;
+    @include base.flex('row', 'space-between', 'center', 0);
+    .title-l {
+      @include base.flex('row', '', 'center', 1.6rem);
+    }
+    
+  }
+  .faq-content {
+    max-height: 0;
+    visibility: hidden;
+    overflow: hidden;
+    padding-left: 5.6rem;
+  }
+  input[type="checkbox"]:checked ~ .faq-content{
+    padding-top: 0.4rem;
+    max-height: 100vh;
+    height: auto;
+    visibility: visible;
+    opacity: 1;
+    transition: all 2s ease;
+    * {
+      opacity: 1;
+    }
+  }
+  .img-v {
+    transform: rotate(180deg);
+  }
+  input[type="checkbox"]:checked + label .img-v {
+    transform: rotate(0);
+  }
+
+  .more {
+    color: #1F6FE8;
+    cursor: pointer;
+  }
+
+  .ccard-cont {
+    margin-bottom: 1.2rem;
+    @include base.flex('row', '', 'center', 1.2rem);
+    .ccard1 {
+      width: 40%;
+    }
+    .ccard2 {
+      width: 40%;
+    }
+  }
+
+  .cert {
+    margin-top: 2.4rem;
+    width :90%;
+  }
+
+}
