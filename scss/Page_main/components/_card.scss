@@ -188,3 +188,59 @@
     width: 100%;
   }
 }
+
+.tip-cards {
+  margin-top: 4.8rem;
+  @include base.flex('row', '', '', clamp(2rem, 2vw, 4rem));
+
+  @include base.mq-breakpoint-down(sm) {
+    @include base.flex('column', '', 'center', 3rem);
+  }
+  .tip-card {
+    width: 33%;
+    min-height: 50rem;
+    position: relative;
+
+    @include base.mq-breakpoint-down(sm) {
+      max-width: 41rem;
+      width: 100%;
+    min-height: 45rem;
+    }
+    img {
+      max-width: 100%;
+      border-top-right-radius: 12px;
+      border-top-left-radius: 12px;
+    }
+
+    box-shadow: 2px 4px 18px rgba(169, 169, 169, 0.18);
+    border-radius: 12px;
+  }
+
+  .tip-title {
+    font-family: 'GmarketSans';
+    font-weight: 500;
+    font-size: 1.5rem;
+    line-height: 130%;
+    color: #212121;
+  }
+
+  .tip-content {
+    margin-top: 0.8rem;
+    font-size: 1.3rem;
+    line-height: 150%;
+    color: #616161;
+  }
+
+  .tip-body {
+    padding: 2.4rem;
+  }
+
+  .tip-more {
+    position: absolute;
+    cursor: pointer;
+    bottom: 2.4rem;
+    font-size: 1.4rem;
+    line-height: 150%;
+    color: #1F6FE8;
+  }
+}

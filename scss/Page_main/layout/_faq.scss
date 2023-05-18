@@ -2,11 +2,22 @@
 @use "../components/index";
 
 #f1 {
+  .container {
+    padding-top: 6rem;
+  }
+  .title-1, .content-1 {
+    text-align: center;
+  }
+
+  .faq-cont {
+    margin-top: 4.8rem;
+  }
+  
   input { display: none; }
   .li-cont {
     @include base.flex('column', 'center', '', 0);
     padding: 3.2rem 2.4rem;
-    background: #f3f7fa;
+    background: #FAFBFC;
     border-top: 2px solid rgba(238, 238, 238, 1);
   }
 
@@ -35,7 +46,6 @@
     padding-left: 5.6rem;
   }
   input[type="checkbox"]:checked ~ .faq-content{
-    padding-top: 0.4rem;
     max-height: 100vh;
     height: auto;
     visibility: visible;
@@ -73,4 +83,56 @@
     width :90%;
   }
 
+}
+
+#f2 {
+  .title-1, .content-1 {
+    text-align: center;
+  }
+  padding-top: 12rem;
+  padding-bottom: 12rem;
+}
+
+#f3 {
+  padding-bottom: 8rem;
+  .consult-cont {
+    background: #F4F9FE;
+    border-radius: 12px;
+    padding: 4.8rem 7.2rem;
+
+    @include base.flex('row', 'space-between', 'center', 4rem);
+  }
+
+  .consult-title {
+    font-family: 'GmarketSans';
+    font-weight: 800;
+    font-size: 2rem;
+    line-height: 130%;
+    margin-bottom: 0.4rem;
+    color: #212121;
+  }
+  .consult-content {
+    font-size: 1.4rem;
+    line-height: 150%;
+    color: #616161; 
+    margin-bottom: 2.4rem;
+  }
+
+  .consult-btn {
+    /* Auto layout */
+    font-family: 'GmarketSans';
+    color: #1F6FE8;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 14px;
+
+    padding: 0 2.4rem;
+    width: 16rem;
+    height: 4.4rem;
+
+    background: rgba(31, 111, 232, 0.1);
+
+    border: 1px solid #1F6FE8;
+    border-radius: 4px;
+  }
 }

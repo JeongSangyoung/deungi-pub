@@ -484,6 +484,67 @@ footer .footer-b .b-copyright {
   }
 }
 
+.tip-cards {
+  margin-top: 4.8rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: clamp(2rem, 2vw, 4rem);
+}
+@media screen and (max-width: 959.98px) {
+  .tip-cards {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 3rem;
+  }
+}
+.tip-cards .tip-card {
+  width: 33%;
+  min-height: 50rem;
+  position: relative;
+  box-shadow: 2px 4px 18px rgba(169, 169, 169, 0.18);
+  border-radius: 12px;
+}
+@media screen and (max-width: 959.98px) {
+  .tip-cards .tip-card {
+    max-width: 41rem;
+    width: 100%;
+    min-height: 45rem;
+  }
+}
+.tip-cards .tip-card img {
+  max-width: 100%;
+  border-top-right-radius: 12px;
+  border-top-left-radius: 12px;
+}
+.tip-cards .tip-title {
+  font-family: "GmarketSans";
+  font-weight: 500;
+  font-size: 1.5rem;
+  line-height: 130%;
+  color: #212121;
+}
+.tip-cards .tip-content {
+  margin-top: 0.8rem;
+  font-size: 1.3rem;
+  line-height: 150%;
+  color: #616161;
+}
+.tip-cards .tip-body {
+  padding: 2.4rem;
+}
+.tip-cards .tip-more {
+  position: absolute;
+  cursor: pointer;
+  bottom: 2.4rem;
+  font-size: 1.4rem;
+  line-height: 150%;
+  color: #1F6FE8;
+}
+
 .color-text-blue {
   color: #2F5DD4 !important;
 }
@@ -537,7 +598,7 @@ Noto {
 
 .title-1 {
   font-family: "GmarketSans";
-  font-size: clamp(2.4rem, 2.4vw, 4.8rem);
+  font-size: clamp(2.4rem, 2.4vw, 3.2rem);
   line-height: 130%;
   color: #212121;
 }
@@ -638,6 +699,14 @@ Noto {
 
 #p2 {
   background: #FAFBFC;
+}
+#p2 .title-1 {
+  text-align: center;
+}
+#p2 .content-1 {
+  text-align: center;
+  margin-top: 0.8rem;
+  margin-bottom: 7.2rem;
 }
 
 #p2 .container {
@@ -1101,7 +1170,7 @@ Noto {
 }
 #c2 .check {
   padding: 3.2rem 4rem;
-  background: #f0f4f8;
+  background: #FAFBFC;
   border-radius: 12px;
 }
 #c2 .check-title {
@@ -1127,6 +1196,15 @@ Noto {
   list-style-type: disc;
 }
 
+#f1 .container {
+  padding-top: 6rem;
+}
+#f1 .title-1, #f1 .content-1 {
+  text-align: center;
+}
+#f1 .faq-cont {
+  margin-top: 4.8rem;
+}
 #f1 input {
   display: none;
 }
@@ -1137,7 +1215,7 @@ Noto {
   align-items: flex-start;
   gap: 0;
   padding: 3.2rem 2.4rem;
-  background: #f3f7fa;
+  background: #FAFBFC;
   border-top: 2px solid rgb(238, 238, 238);
 }
 #f1 .faq-label {
@@ -1170,7 +1248,6 @@ Noto {
   padding-left: 5.6rem;
 }
 #f1 input[type=checkbox]:checked ~ .faq-content {
-  padding-top: 0.4rem;
   max-height: 100vh;
   height: auto;
   visibility: visible;
@@ -1207,6 +1284,56 @@ Noto {
 #f1 .cert {
   margin-top: 2.4rem;
   width: 90%;
+}
+
+#f2 {
+  padding-top: 12rem;
+  padding-bottom: 12rem;
+}
+#f2 .title-1, #f2 .content-1 {
+  text-align: center;
+}
+
+#f3 {
+  padding-bottom: 8rem;
+}
+#f3 .consult-cont {
+  background: #F4F9FE;
+  border-radius: 12px;
+  padding: 4.8rem 7.2rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 4rem;
+}
+#f3 .consult-title {
+  font-family: "GmarketSans";
+  font-weight: 800;
+  font-size: 2rem;
+  line-height: 130%;
+  margin-bottom: 0.4rem;
+  color: #212121;
+}
+#f3 .consult-content {
+  font-size: 1.4rem;
+  line-height: 150%;
+  color: #616161;
+  margin-bottom: 2.4rem;
+}
+#f3 .consult-btn {
+  /* Auto layout */
+  font-family: "GmarketSans";
+  color: #1F6FE8;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 14px;
+  padding: 0 2.4rem;
+  width: 16rem;
+  height: 4.4rem;
+  background: rgba(31, 111, 232, 0.1);
+  border: 1px solid #1F6FE8;
+  border-radius: 4px;
 }
 
 .container {
