@@ -34,6 +34,11 @@
     font-family: 'GmarketSans';
     font-size: 1.4rem;
     font-weight: 500;
+
+    transition: all 0.5s ease;
+    &:hover {
+      background: rgba(31, 111, 232, 0.18);
+    }
   }
 
   @include base.mq-breakpoint-down(sm) {
@@ -115,46 +120,9 @@
   .right {
     flex-basis: 67%;
     @include base.flex('column', 'center', '', 0);
-    
-    > ul {
-      padding-left: 6rem;
-      width: 100%;
-      @include base.flex('row', 'space-between', 'center', 3rem);
 
-      @include base.mq-breakpoint-down(sm) {
-        padding-left: unset;
-        margin-top: 8rem;
-        @include base.flex('column', 'center', 'center', 8rem);
-      }
-
-      li {
-        flex-basis: 50%;
-        height: 100%;
-        position: relative;
-      }
-    }
   }
   position: relative;
-  .service-plus {
-    width: 5.2rem;
-    height: 5.2rem;
-    border-radius: 50%;
-    background-color: white;
-    box-shadow:  2px 2px 20px rgba(185, 185, 185, 0.4);
-    z-index: 2;
-
-    @include base.flex('row', 'center', 'center', '');
-    position: absolute;
-    top: 50%;
-    right:0%;
-    transform: translate(calc(50% + 1.5rem), -50%);
-
-    @include base.mq-breakpoint-down(sm) {
-      top: 100%;
-      right: 50%;
-      transform: translate(50%, calc(50% - 1rem));
-    }
-  }
 
   .p3-title2 {
     @include base.flex('row', '', 'center', 0.8rem);
@@ -269,23 +237,7 @@
   h2 {
     margin-bottom: 0.8rem;
   }
-
-  ul {
-    margin-top: 4.8rem;
-    @include base.flex('row', 'space-between', '', clamp(2.4rem, 2.4vw, 3.2rem));
-    @include base.mq-breakpoint-down(sm) {
-      display: grid;
-      grid-template-columns: 1fr 1fr 1fr;
-      place-items: center;
-    }
-    @include base.mq-breakpoint-down(xs) {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      place-items: center;
-    }
-  }
 }
-
 #p7 .container {
   padding-top: 18.4rem;
   padding-bottom: 18.4rem;
@@ -380,7 +332,7 @@
 
   .apply-btn {
     border: 1px solid #1F6FE8;
-    background: #1f6fe821;
+    background: rgba(31, 111, 232, 0.1);
     color: #1F6FE8;
     border-radius: 4px;
     padding: 1.2rem 0;
@@ -388,6 +340,12 @@
     font-family: 'GmarketSans';
     font-size: 1.4rem;
     font-weight: 500;
+
+
+    transition: all 0.5s ease;
+    &:hover {
+      background: rgba(31, 111, 232, 0.18);
+    }
   }
 
   background: rgba(244, 249, 254, 1);

@@ -286,7 +286,88 @@ footer .footer-b .b-copyright {
   margin-left: 6rem;
 }
 
-.service-card {
+.service-cont {
+  padding-left: 6rem;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 3rem;
+  position: relative;
+}
+@media screen and (max-width: 959.98px) {
+  .service-cont {
+    padding-left: unset;
+    margin-top: 8rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 8rem;
+  }
+}
+.service-cont .service-plus-main {
+  position: absolute;
+  width: 5.2rem;
+  height: 5.2rem;
+  border-radius: 50%;
+  background-color: white;
+  box-shadow: 2px 2px 20px rgba(185, 185, 185, 0.4);
+  z-index: 2;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: "";
+  top: 50%;
+  left: 50%;
+  transform: translate(0.2rem, -1rem);
+}
+@media screen and (max-width: 959.98px) {
+  .service-cont .service-plus-main {
+    transform: translate(-50%, -1rem);
+  }
+}
+.service-cont .service-plus-cost {
+  position: absolute;
+  width: 5.2rem;
+  height: 5.2rem;
+  border-radius: 50%;
+  background-color: white;
+  box-shadow: 2px 2px 20px rgba(185, 185, 185, 0.4);
+  z-index: 2;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: "";
+  top: 50%;
+  left: 33%;
+  transform: translate(1.2rem, -1.2rem);
+}
+@media screen and (max-width: 959.98px) {
+  .service-cont .service-plus-cost {
+    top: 33%;
+    left: 50%;
+    transform: translate(-50%, -3.5rem);
+  }
+}
+.service-cont .service-card {
+  flex-basis: 50%;
+  height: 100%;
+  position: relative;
+  transition: all 0.6s ease;
+}
+.service-cont .service-card:hover {
+  transform: translateY(-1.6rem);
+}
+@media screen and (max-width: 959.98px) {
+  .service-cont .service-card:hover {
+    transform: unset;
+  }
+}
+.service-cont .service-card {
   text-align: center;
   border-radius: 12px;
   padding-top: 4rem;
@@ -295,12 +376,13 @@ footer .footer-b .b-copyright {
   padding-bottom: 7rem;
 }
 @media screen and (max-width: 959.98px) {
-  .service-card {
+  .service-cont .service-card {
+    min-height: 42rem;
     max-width: 42rem;
     width: 100%;
   }
 }
-.service-card .divider {
+.service-cont .service-card .divider {
   margin-top: 2rem;
   margin-bottom: 2rem;
   display: flex;
@@ -309,32 +391,32 @@ footer .footer-b .b-copyright {
   align-items: center;
   gap: "";
 }
-.service-card .divider:before, .service-card .divider:after {
+.service-cont .service-card .divider:before, .service-cont .service-card .divider:after {
   content: "";
   flex: 1;
   border-bottom: 1px solid rgb(216, 216, 216);
 }
-.service-card .divider:before {
+.service-cont .service-card .divider:before {
   margin-left: 2.4rem;
   margin-right: 1.6rem;
 }
-.service-card .divider:after {
+.service-cont .service-card .divider:after {
   margin-left: 1.6rem;
   margin-right: 2.4rem;
 }
-.service-card .service-title {
+.service-cont .service-card .service-title {
   font-family: "GmarketSans";
   font-size: 2rem;
   line-height: 150%;
   color: #212121;
 }
-.service-card .service-price {
+.service-cont .service-card .service-price {
   font-family: "GmarketSans";
   font-size: 2.4rem;
   line-height: 150%;
   color: #212121;
 }
-.service-card .service-btn {
+.service-cont .service-card .service-btn {
   font-weight: 500;
   margin-top: 2rem;
   width: 100%;
@@ -345,13 +427,13 @@ footer .footer-b .b-copyright {
   font-size: 1.4rem;
   line-height: 150%;
 }
-.service-card .service-list {
+.service-cont .service-card .service-list {
   font-family: "NotoSans";
   font-size: clamp(1.2rem, 1.1vw, 1.4rem);
   line-height: 150%;
   color: #212121;
 }
-.service-card .service-list li {
+.service-cont .service-card .service-list li {
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -360,46 +442,55 @@ footer .footer-b .b-copyright {
   letter-spacing: -0.5px;
   margin-bottom: 1.2rem;
 }
-.service-card .service-list li img {
+.service-cont .service-card .service-list li img {
   margin-right: 0.4rem;
 }
-
-.cl {
+.service-cont .cl {
   border: 1px solid #1F6FE8;
 }
-.cl .service-btn {
+.service-cont .cl .service-btn {
   background: #1F6FE8;
   border: 2px solid #1F6FE8;
   color: #FAFAFA;
   position: absolute;
   bottom: 0%;
   left: 0%;
+  transition: all 0.5s ease;
 }
-
-.cr {
+.service-cont .cl .service-btn:hover {
+  background: rgb(28, 100, 209);
+}
+.service-cont .cr {
   border: 1px solid rgba(31, 111, 232, 0.4196078431);
   position: relative;
 }
-.cr .service-btn {
+.service-cont .cr .service-btn {
   position: absolute;
   bottom: 0%;
   left: 0%;
   background: rgba(31, 111, 232, 0.1215686275);
   color: #1F6FE8;
   border: 2px solid transparent;
+  transition: all 0.5s ease;
 }
-
-.co {
+.service-cont .cr .service-btn:hover {
+  background: rgba(31, 111, 232, 0.18);
+}
+.service-cont .co {
   border: 1px solid rgb(33, 178, 91);
   position: relative;
 }
-.co .service-btn {
+.service-cont .co .service-btn {
   position: absolute;
   bottom: 0%;
   left: 0%;
   background: rgb(33, 178, 91);
   color: rgb(250, 250, 250);
   border: 2px solid transparent;
+  transition: all 0.5s ease;
+}
+.service-cont .co .service-btn:hover {
+  background: #1EA454;
 }
 
 .step-card {
@@ -444,7 +535,30 @@ footer .footer-b .b-copyright {
   color: #212121 !important;
 }
 
-.ben-card {
+.ben-cont {
+  margin-top: 4.8rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: clamp(2.4rem, 2.4vw, 3.2rem);
+}
+@media screen and (max-width: 959.98px) {
+  .ben-cont {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    place-items: center;
+  }
+}
+@media screen and (max-width: 599.98px) {
+  .ben-cont {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    place-items: center;
+  }
+}
+.ben-cont .ben-card {
+  transition: all 0.6s ease;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -456,13 +570,16 @@ footer .footer-b .b-copyright {
   height: 173px;
   border-radius: 8px;
 }
-.ben-card .ben-title {
+.ben-cont .ben-card:hover {
+  transform: translateY(-1.6rem);
+}
+.ben-cont .ben-card .ben-title {
   font-size: 1.6rem;
   font-weight: 500;
   text-align: center;
   color: #212121;
 }
-.ben-card .ben-cost {
+.ben-cont .ben-card .ben-cost {
   font-weight: 400;
   font-size: 1.4rem;
   line-height: 150%;
@@ -471,14 +588,14 @@ footer .footer-b .b-copyright {
   text-decoration-line: line-through;
   color: #9E9E9E;
 }
-.ben-card .ben-free {
+.ben-cont .ben-card .ben-free {
   font-size: 1.6rem;
   line-height: 150%;
   text-align: center;
   color: #EA3727;
 }
 @media screen and (max-width: 599.98px) {
-  .ben-card {
+  .ben-cont .ben-card {
     max-width: 177px;
     width: 100%;
   }
@@ -668,6 +785,10 @@ Noto {
   font-family: "GmarketSans";
   font-size: 1.4rem;
   font-weight: 500;
+  transition: all 0.5s ease;
+}
+#p1 .container .apply-btn:hover {
+  background: rgba(31, 111, 232, 0.18);
 }
 @media screen and (max-width: 959.98px) {
   #p1 .container {
@@ -779,55 +900,6 @@ Noto {
   justify-content: center;
   align-items: flex-start;
   gap: 0;
-}
-#p3 .container .right > ul {
-  padding-left: 6rem;
-  width: 100%;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  gap: 3rem;
-}
-@media screen and (max-width: 959.98px) {
-  #p3 .container .right > ul {
-    padding-left: unset;
-    margin-top: 8rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 8rem;
-  }
-}
-#p3 .container .right > ul li {
-  flex-basis: 50%;
-  height: 100%;
-  position: relative;
-}
-#p3 .container .service-plus {
-  width: 5.2rem;
-  height: 5.2rem;
-  border-radius: 50%;
-  background-color: white;
-  box-shadow: 2px 2px 20px rgba(185, 185, 185, 0.4);
-  z-index: 2;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  gap: "";
-  position: absolute;
-  top: 50%;
-  right: 0%;
-  transform: translate(calc(50% + 1.5rem), -50%);
-}
-@media screen and (max-width: 959.98px) {
-  #p3 .container .service-plus {
-    top: 100%;
-    right: 50%;
-    transform: translate(50%, calc(50% - 1rem));
-  }
 }
 #p3 .container .p3-title2 {
   display: flex;
@@ -960,28 +1032,6 @@ Noto {
 #p6 h2 {
   margin-bottom: 0.8rem;
 }
-#p6 ul {
-  margin-top: 4.8rem;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: flex-start;
-  gap: clamp(2.4rem, 2.4vw, 3.2rem);
-}
-@media screen and (max-width: 959.98px) {
-  #p6 ul {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    place-items: center;
-  }
-}
-@media screen and (max-width: 599.98px) {
-  #p6 ul {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    place-items: center;
-  }
-}
 
 #p7 .container {
   padding-top: 18.4rem;
@@ -1096,7 +1146,7 @@ Noto {
 }
 #p9 .container .apply-btn {
   border: 1px solid #1F6FE8;
-  background: rgba(31, 111, 232, 0.1294117647);
+  background: rgba(31, 111, 232, 0.1);
   color: #1F6FE8;
   border-radius: 4px;
   padding: 1.2rem 0;
@@ -1104,6 +1154,10 @@ Noto {
   font-family: "GmarketSans";
   font-size: 1.4rem;
   font-weight: 500;
+  transition: all 0.5s ease;
+}
+#p9 .container .apply-btn:hover {
+  background: rgba(31, 111, 232, 0.18);
 }
 #p9 .container p {
   margin-top: 0.8rem;
@@ -1115,52 +1169,8 @@ Noto {
   padding-top: 6rem;
   position: relative;
 }
-#c1 .service-card-cont {
-  margin-top: 4.8rem;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  gap: 3rem;
-}
-@media screen and (max-width: 959.98px) {
-  #c1 .service-card-cont {
-    margin-top: 8rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 8rem;
-  }
-}
-#c1 .service-card-cont li {
-  flex-basis: 34%;
-  height: 100%;
-  position: relative;
-}
-#c1 .service-plus {
-  width: 5.2rem;
-  height: 5.2rem;
-  border-radius: 50%;
-  background-color: white;
-  box-shadow: 2px 2px 20px rgba(185, 185, 185, 0.4);
-  z-index: 2;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  gap: "";
-  position: absolute;
-  top: 50%;
-  right: 0%;
-  transform: translate(calc(50% + 1.5rem), -50%);
-}
-@media screen and (max-width: 959.98px) {
-  #c1 .service-plus {
-    top: 100%;
-    right: 50%;
-    transform: translate(50%, calc(50% - 1rem));
-  }
+#c1 .service-cont {
+  margin-top: 6rem;
 }
 
 #c2 {

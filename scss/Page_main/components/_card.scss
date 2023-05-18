@@ -1,118 +1,197 @@
 @use '../../base/index' as base;
+.service-cont {
+  padding-left: 6rem;
+  width: 100%;
+  @include base.flex('row', 'space-between', 'center', 3rem);
 
-.service-card {
-  text-align: center;
-  border-radius: 12px;
-  padding-top: 4rem;
-  min-width: 25rem;
-  min-height: 50rem;
-  padding-bottom: 7rem;
   @include base.mq-breakpoint-down(sm) {
-    max-width: 42rem;
-    width: 100%;
+    padding-left: unset;
+    margin-top: 8rem;
+    @include base.flex('column', 'center', 'center', 8rem);
   }
+  position: relative;
 
+  .service-plus-main {
+    position: absolute;
+    width: 5.2rem;
+    height: 5.2rem;
+    border-radius: 50%;
+    background-color: white;
+    box-shadow:  2px 2px 20px rgba(185, 185, 185, 0.4);
+    z-index: 2;
 
-  .divider {
-    margin-top: 2rem;
-    margin-bottom: 2rem;
     @include base.flex('row', 'center', 'center', '');
-    &:before, &:after {
-      content: "";
-      flex: 1;
-      border-bottom: 1px solid rgb(216, 216, 216);
-    }
-    &:before {
-      margin-left: 2.4rem;
-      margin-right: 1.6rem;
-    }
-    &:after {
-      margin-left: 1.6rem;
-      margin-right: 2.4rem;
+    top: 50%;
+    left: 50%;
+    transform: translate(0.2rem, -1rem);
+    @include base.mq-breakpoint-down(sm) {
+      transform: translate(-50%, -1rem);
     }
   }
+  .service-plus-cost {
+    position: absolute;
+    width: 5.2rem;
+    height: 5.2rem;
+    border-radius: 50%;
+    background-color: white;
+    box-shadow:  2px 2px 20px rgba(185, 185, 185, 0.4);
+    z-index: 2;
 
-  .service-title {
-    font-family: 'GmarketSans';
-    font-size: 2.0rem;
-    line-height: 150%;
-    color: #212121;
+    @include base.flex('row', 'center', 'center', '');
+    top: 50%;
+    left: 33%;
+    transform: translate(1.2rem, -1.2rem);
+    @include base.mq-breakpoint-down(sm) {
+      top: 33%;
+      left: 50%;
+      transform: translate(-50%, -3.5rem);
+    }
   }
+  
+  .service-card {
+    flex-basis: 50%;
+    height: 100%;
+    position: relative;
+    transition: all 0.6s ease;
+    &:hover {
+      transform: translateY(-1.6rem);
+    }
+    @include base.mq-breakpoint-down(sm) {
+      &:hover {
+        transform: unset;
+      }
+    }
 
-  .service-price {
-    font-family: 'GmarketSans';
-    font-size: 2.4rem;
-    line-height: 150%;
-    color: #212121;
+
   }
-
-  .service-btn {
-    font-weight: 500;
-    margin-top: 2rem;
-    width: 100%;
-    padding: 1.2rem;
-    border-bottom-right-radius: 8px;
-    border-bottom-left-radius: 8px;
-    font-family: 'GmarketSans';
-    font-size: 1.4rem;
-    line-height: 150%;
-  }
-
-  .service-list {
-    font-family: 'NotoSans';
-    font-size: clamp(1.2rem, 1.1vw, 1.4rem);
-    line-height: 150%;
-    color: #212121;
-
-    li {
+  .service-card {
+    text-align: center;
+    border-radius: 12px;
+    padding-top: 4rem;
+    min-width: 25rem;
+    min-height: 50rem;
+    padding-bottom: 7rem;
+    @include base.mq-breakpoint-down(sm) {
+      min-height: 42rem;
+      max-width: 42rem;
+      width: 100%;
+    }
+  
+  
+    .divider {
+      margin-top: 2rem;
+      margin-bottom: 2rem;
       @include base.flex('row', 'center', 'center', '');
-      letter-spacing: -0.5px;
-      margin-bottom: 1.2rem;
-      img {
-        margin-right: 0.4rem;
+      &:before, &:after {
+        content: "";
+        flex: 1;
+        border-bottom: 1px solid rgb(216, 216, 216);
+      }
+      &:before {
+        margin-left: 2.4rem;
+        margin-right: 1.6rem;
+      }
+      &:after {
+        margin-left: 1.6rem;
+        margin-right: 2.4rem;
+      }
+    }
+  
+    .service-title {
+      font-family: 'GmarketSans';
+      font-size: 2.0rem;
+      line-height: 150%;
+      color: #212121;
+    }
+  
+    .service-price {
+      font-family: 'GmarketSans';
+      font-size: 2.4rem;
+      line-height: 150%;
+      color: #212121;
+    }
+  
+    .service-btn {
+      font-weight: 500;
+      margin-top: 2rem;
+      width: 100%;
+      padding: 1.2rem;
+      border-bottom-right-radius: 8px;
+      border-bottom-left-radius: 8px;
+      font-family: 'GmarketSans';
+      font-size: 1.4rem;
+      line-height: 150%;
+    }
+  
+    .service-list {
+      font-family: 'NotoSans';
+      font-size: clamp(1.2rem, 1.1vw, 1.4rem);
+      line-height: 150%;
+      color: #212121;
+  
+      li {
+        @include base.flex('row', 'center', 'center', '');
+        letter-spacing: -0.5px;
+        margin-bottom: 1.2rem;
+        img {
+          margin-right: 0.4rem;
+        }
+      }
+    }
+  
+  
+  }
+  .cl {
+    border: 1px solid #1F6FE8;
+  
+    .service-btn {
+      background: #1F6FE8;
+      border: 2px solid #1F6FE8;
+      color: #FAFAFA;
+      position: absolute;
+      bottom: 0%;
+      left: 0%;
+
+      transition: all 0.5s ease;
+      &:hover {
+        background: rgba(28, 100, 209, 1);
       }
     }
   }
+  .cr {
+    border: 1px solid #1f6fe86b; 
+    position: relative;
+    .service-btn {
+      position: absolute;
+      bottom: 0%;
+      left: 0%;
+      background: #1f6fe81f;
+      color: #1F6FE8;
+      border: 2px solid transparent;
 
-
-}
-.cl {
-  border: 1px solid #1F6FE8;
-
-  .service-btn {
-    background: #1F6FE8;
-    border: 2px solid #1F6FE8;
-    color: #FAFAFA;
-    position: absolute;
-    bottom: 0%;
-    left: 0%;
+      transition: all 0.5s ease;
+      &:hover {
+        background: rgba(31, 111, 232, 0.18); 
+      }
+    } 
   }
-}
-.cr {
-  border: 1px solid #1f6fe86b;
-  position: relative;
-  .service-btn {
-    position: absolute;
-    bottom: 0%;
-    left: 0%;
-    background: #1f6fe81f;
-    color: #1F6FE8;
-    border: 2px solid transparent
-
-  }
-}
-.co {
-  border: 1px solid rgba(33, 178, 91, 1);
-  position: relative;
-  .service-btn {
-    position: absolute;
-    bottom: 0%;
-    left: 0%;
-    background: rgba(33, 178, 91, 1);
-    color: rgba(250, 250, 250, 1);
-    border: 2px solid transparent
-
-  }
+  .co {
+    border: 1px solid rgba(33, 178, 91, 1);
+    position: relative;
+    .service-btn {
+      position: absolute;
+      bottom: 0%;
+      left: 0%;
+      background: rgba(33, 178, 91, 1);
+      color: rgba(250, 250, 250, 1);
+      border: 2px solid transparent;
+      
+      transition: all 0.5s ease;
+      &:hover {
+        background: #1EA454;
+      }
+    }
+  }  
 }
 
 
@@ -151,41 +230,58 @@
   }
 }
 
-
-.ben-card {
-  @include base.flex('column', 'center', 'center', 0.8rem);
-  background: #FFFFFF;
-  box-shadow: 2px 4px 18px rgba(169, 169, 169, 0.18);
-  width: 169.33px;
-  height: 173px;
-  border-radius: 8px;
-  
-  .ben-title {
-    font-size: 1.6rem;
-    font-weight: 500;
-    text-align: center;
-    color: #212121;
-  }
-
-  .ben-cost {
-    font-weight: 400;
-    font-size: 1.4rem;
-    line-height: 150%;
-    font-weight: 100;
-    text-align: center;
-    text-decoration-line: line-through;
-    color: #9E9E9E;
-  }
-
-  .ben-free {
-    font-size: 1.6rem;
-    line-height: 150%;
-    text-align: center;
-    color: #EA3727;
+.ben-cont {
+  margin-top: 4.8rem;
+  @include base.flex('row', 'space-between', '', clamp(2.4rem, 2.4vw, 3.2rem));
+  @include base.mq-breakpoint-down(sm) {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    place-items: center;
   }
   @include base.mq-breakpoint-down(xs) {
-    max-width: 177px;
-    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    place-items: center;
+  }
+  .ben-card {
+    transition: all 0.6s ease;
+    &:hover {
+      transform: translateY(-1.6rem);
+    }
+    @include base.flex('column', 'center', 'center', 0.8rem);
+    background: #FFFFFF;
+    box-shadow: 2px 4px 18px rgba(169, 169, 169, 0.18);
+    width: 169.33px;
+    height: 173px;
+    border-radius: 8px;
+    
+    .ben-title {
+      font-size: 1.6rem;
+      font-weight: 500;
+      text-align: center;
+      color: #212121;
+    }
+  
+    .ben-cost {
+      font-weight: 400;
+      font-size: 1.4rem;
+      line-height: 150%;
+      font-weight: 100;
+      text-align: center;
+      text-decoration-line: line-through;
+      color: #9E9E9E;
+    }
+  
+    .ben-free {
+      font-size: 1.6rem;
+      line-height: 150%;
+      text-align: center;
+      color: #EA3727;
+    }
+    @include base.mq-breakpoint-down(xs) {
+      max-width: 177px;
+      width: 100%;
+    }
   }
 }
 
