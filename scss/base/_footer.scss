@@ -14,12 +14,16 @@ footer {
       font-size: 13px;
       line-height: 18.2px;
       font-weight: 500;
+      li {
+        cursor: pointer;
+      }
     }
     .t-right {
       @include mixins.flex('row', '', 'center', 0.8rem);
       img { 
         width: 3.4rem; 
         height: 3.4rem;
+        cursor: pointer;
       }
     }
   }

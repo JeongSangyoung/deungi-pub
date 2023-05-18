@@ -98,6 +98,9 @@ footer .footer-t .container .t-left {
   line-height: 18.2px;
   font-weight: 500;
 }
+footer .footer-t .container .t-left li {
+  cursor: pointer;
+}
 footer .footer-t .container .t-right {
   display: flex;
   flex-direction: row;
@@ -108,6 +111,7 @@ footer .footer-t .container .t-right {
 footer .footer-t .container .t-right img {
   width: 3.4rem;
   height: 3.4rem;
+  cursor: pointer;
 }
 footer .footer-m {
   display: flex;
@@ -923,7 +927,7 @@ Noto {
   justify-content: center;
   align-items: center;
   gap: "";
-  background-image: url("../../../images/building-full.png");
+  background-image: url("../images/building-full.png");
   height: 32rem;
   background-position: right top;
   background-repeat: no-repeat;
