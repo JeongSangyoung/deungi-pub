@@ -140,7 +140,7 @@
 
 #p4 {
   @include base.flex('column', 'center', 'center', '');
-  background-image: url('../images/building-full.png');
+  background-image: url('../../images/building-full.png');
   height: 32rem;
   background-position: right top;
   background-repeat: no-repeat;
