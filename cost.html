@@ -13,11 +13,26 @@
     <div class="container">
       <img src="./images/logo.svg" />
       
-      <ul class="content-2">
-        <li class="nav-item">비용안내</li>
-        <li class="nav-item" id="nav-review">법인설립 후기</li>
-        <li class="nav-item">법인설립 FAQ</li>
-        <li class="nav-item">로그인</li>
+      <ul class="nav-cont content-2">
+        <li class="nav-item"><a class="ic">비용안내</a></li>
+        <li class="nav-item" id="nav-review"><a class="ic">법인설립 후기</a></li>
+        <li class="nav-item"><a class="ic">법인설립 FAQ</a></li>
+        <!-- <li class="nav-item"><a class="ic">로그인</a></li> -->
+        <li class="nav-item vvv">
+          <input type="checkbox" id="nav-mp" />
+          <label class="nav-label" for="nav-mp">
+            <a class="ic">마이페이지</a>
+            <img class="nav-v" src="./images/v-white.svg" />
+          </label>
+          <ul class="mp-content">
+            <li>주문목록</li>
+            <li>결제/환불내역</li>
+            <li>법인 설립 정보</li>
+            <li>계정 설정</li>
+            <div class="mp-divider"><p></p></div>
+            <li>로그아웃</li>
+          </ul>
+        </li>
         <li class="nav-btns">
           <button class="nav-btn">
             변경등기
