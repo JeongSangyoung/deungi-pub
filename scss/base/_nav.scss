@@ -1,18 +1,31 @@
 @use 'mixins';
 
 #nav {
+  position: fixed;
   background: #2C324B;
   height: 6rem;
+  z-index: 5;
+  width: 100%;
+
+  @include mixins.mq-breakpoint-down(sm) {
+    .nav-logo {
+      width: 8rem;
+    }
+  }
 
   .mp-content { 
     display: none; 
   }
-  input[type="checkbox"]:checked ~ .mp-content {
+
+  .vvv {
+    position: relative;
+  }
+  .vvv:hover .mp-content {
     display: flex;
     flex-direction: column;
   }
-  input[type="checkbox"]:checked + label .nav-v {
-    transform: rotate(0);
+  .vvv:hover .nav-v {
+    // transform: rotate(0);
   }
 
   #nav-mp {
@@ -28,6 +41,7 @@
     .nav-cont {
       color: #FAFAFA;
       @include mixins.flex('row', 'center', 'center', 4rem);
+      height: 100%;
     }
   }
 
@@ -38,6 +52,7 @@
     @include mixins.mq-breakpoint-down(sm) {
       display: none;
     }
+    line-height: 6rem;
   }
 
   .nav-btns {
@@ -59,9 +74,7 @@
     color: #FAFAFA;
     margin-left: 6rem;
   }
-  .vvv {
-    position: relative;
-  }
+  
   .nav-label {
     @include mixins.flex('row', '', 'center', 0.4rem);
   }
@@ -75,7 +88,7 @@
     position: absolute;
     
     top: 0%;
-    transform: translateY(3.5rem);
+    transform: translateY(5rem);
     padding: 1.2rem 0;
     border: 1px solid #EEEEEE;
     box-shadow: 2px 2px 40px rgba(54, 54, 45, 0.2);
@@ -98,6 +111,62 @@
       height: 0.1rem;
       background: rgba(225, 225, 225, 1);
       margin: 0 auto;
+    }
+  }
+}
+
+
+#mps, #hi {
+  display: none;
+}
+
+.nav-small{ 
+  padding-top: 6rem;
+  display: none;
+  visibility: hidden;
+  @include mixins.mq-breakpoint-down(sm) {
+    visibility: visible;
+  }
+}
+#mps:checked + .nav-small {
+  display: block !important;
+  height: 100vh;
+  background: white;
+  width: 100%;
+  z-index: 3;
+  position: fixed;
+  display: block;
+  overflow: hidden;
+}
+.nav-hi-content {
+  display: none;
+}
+#hi:checked + .nav-hi-content {
+  display: block;
+}
+
+.nav-small-content {
+  .nav-si, .nav-hi {
+    cursor: pointer;
+    @include mixins.flex('row', '', 'center', 0);
+    line-height: 5.6rem;
+    height: 5.6rem;
+    padding: 0 2.4rem;
+    font-size: 1.4rem;
+    line-height: 150%;
+    color: #616161;
+  }
+  .nav-si {
+    border-bottom: 1px solid #f3f3f3;
+  }
+  .nav-hi {
+    padding-left: 3.6rem;
+    background: #FAFAFA;
+  }
+  .label-hi {
+    @include mixins.flex('row', 'space-between', 'center', 0);
+    img {
+      transform: rotate(180deg);
     }
   }
 }

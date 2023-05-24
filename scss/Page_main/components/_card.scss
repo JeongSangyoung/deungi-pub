@@ -2,12 +2,21 @@
 .service-cont {
   padding-left: 6rem;
   width: 100%;
-  @include base.flex('row', 'space-between', 'center', 3rem);
+  @include base.flex('row', 'space-between', 'center', 2.4rem);
+
+  @include base.mq-breakpoint-down(sm) {
+    .cr {
+      margin-top: 8rem;
+    }
+    .co {
+      margin-top: 4rem;
+    }
+  }
 
   @include base.mq-breakpoint-down(sm) {
     padding-left: unset;
     margin-top: 8rem;
-    @include base.flex('column', 'center', 'center', 8rem);
+    @include base.flex('column', 'center', 'center', 0);
   }
   position: relative;
 
@@ -25,7 +34,7 @@
     left: 50%;
     transform: translate(0.2rem, -1rem);
     @include base.mq-breakpoint-down(sm) {
-      transform: translate(-50%, -1rem);
+      transform: translate(-50%, -1.6rem);
     }
   }
   .service-plus-cost {
@@ -44,7 +53,7 @@
     @include base.mq-breakpoint-down(sm) {
       top: 33%;
       left: 50%;
-      transform: translate(-50%, -3.5rem);
+      transform: translate(-50%, -2.2rem);
     }
   }
   
@@ -67,7 +76,7 @@
   .service-card {
     text-align: center;
     border-radius: 12px;
-    padding-top: 4rem;
+    padding-top: 3.2rem;
     min-width: 25rem;
     min-height: 50rem;
     padding-bottom: 7rem;
@@ -79,8 +88,8 @@
   
   
     .divider {
-      margin-top: 2rem;
-      margin-bottom: 2rem;
+      margin-top: 2.4rem;
+      margin-bottom: 1.6rem;
       @include base.flex('row', 'center', 'center', '');
       &:before, &:after {
         content: "";
@@ -194,16 +203,20 @@
   }  
 }
 
-
+.p5-step {
+  width: 100%;
+  li {
+    margin-bottom: 1.6rem;
+  }
+}
 .step-card {
-  @include base.flex('row', '', 'center', 3.2rem);
+  @include base.flex('row', '', 'center', 0);
   padding: 1.8rem 4rem;
   box-shadow: 2px 4px 18px rgba(169, 169, 169, 0.18);
   border-radius: 8px;
 
   @include base.mq-breakpoint-down(sm) {
     padding: 1.2rem;
-    gap: 1.2rem;
   }
 
   img {
@@ -212,16 +225,20 @@
   }
 
   .step {
+    margin-left: 3.2rem;
+    margin-right: 1.2rem;
     background: #1F6FE8;
     border-radius: 30px;
     padding: 0.8rem 1.6rem;
-    height: 3rem;
+    // height: 3rem;
     color: #FAFAFA;
     @include base.flex('row', '', 'center', '');
 
     @include base.mq-breakpoint-down(sm) {
       padding: 0.4rem 0.6rem;
       width: 4.5rem;
+      margin-left: 1.2rem;
+      margin-right: 0.8rem;
     }
   }
 
@@ -338,5 +355,93 @@
     font-size: 1.4rem;
     line-height: 150%;
     color: #1F6FE8;
+  }
+}
+
+#p8 {
+  overflow: hidden;
+}
+#p8-slide-l {
+  display: flex;
+  // animation: slideAnimation 1300s linear infinite;
+  animation: slideAnimation 350s linear infinite;
+  margin-top: 4.8rem;
+}
+#p8-slide-r {
+  display: flex;
+  // animation: slideAnimation2 1700s linear infinite;
+  animation: slideAnimation2 350s linear infinite;
+  margin-top: 3.2rem;
+}
+.rCard {
+  width: 39rem;
+  height: 17.6rem;
+  background: #fff;
+  border-radius: 8px;
+  margin: 0 1.2rem;
+  padding: 1.8rem 2.4rem 1.2rem 2.4rem;
+  box-shadow: 2px 4px 18px rgba(169, 169, 169, 0.18);
+  border-radius: 8px;
+  // @include base.mq-breakpoint-down('md') {
+  //   padding: 1.2rem 1.6rem 0.8rem 1.6rem;
+  //   margin: 0 0.6rem;
+  //   width: 26rem;
+  // }
+
+  .rWrap {
+    height: 100%;
+    @include base.flex('col', 'space-between', '', 0);
+  }
+
+  .authorWrap {
+    width: 100%;
+    @include base.flex('row', 'space-between', '', 0);
+    img {
+      width: 2.4rem;
+      padding-left: 0.4rem;
+    }
+    .score {
+      margin-left: 1.2rem;
+    }
+  }
+
+  .avgScore {
+    margin: 0 auto;
+    margin-bottom: 3.6rem;
+    @include base.flex('row', 'center', 'end', 0);
+  }
+
+  .r-content {
+    font-weight: 500;
+    font-size: 1.4rem;
+    line-height: 150%;
+    color: #212121;
+    text-align: left;
+    word-break: keep-all;
+  }
+
+  .r-author {
+    font-weight: 500;
+    font-size: 1.2rem;
+    line-height: 150%;
+
+    color: #616161;
+  }
+}
+@keyframes slideAnimation {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+@keyframes slideAnimation2 {
+  0% {
+    transform: translateX(calc(-100% + 100vw));
+  }
+  100% {
+    transform: translateX(0%);
   }
 }

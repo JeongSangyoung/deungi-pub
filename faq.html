@@ -11,7 +11,7 @@
 <body>
   <nav id="nav">
     <div class="container">
-      <img src="./images/logo.svg" />
+      <img src="./images/logo.svg" class="nav-logo" />
       
       <ul class="nav-cont content-2">
         <li class="nav-item"><a class="ic">비용안내</a></li>
@@ -19,11 +19,10 @@
         <li class="nav-item"><a class="ic">법인설립 FAQ</a></li>
         <!-- <li class="nav-item"><a class="ic">로그인</a></li> -->
         <li class="nav-item vvv">
-          <input type="checkbox" id="nav-mp" />
-          <label class="nav-label" for="nav-mp">
+          <div class="nav-label">
             <a class="ic">마이페이지</a>
             <img class="nav-v" src="./images/v-white.svg" />
-          </label>
+          </div>
           <ul class="mp-content">
             <li>주문목록</li>
             <li>결제/환불내역</li>
@@ -37,11 +36,35 @@
           <button class="nav-btn">
             변경등기
           </button>
-          <img src="./images/menu.svg" />
+          <label class="mp-small-label" for="mps">
+            <img src="./images/menu.svg" />
+          </label>
         </li>
       </ul>
     </div>
   </nav>
+
+  <input type="radio" name="faq" id="mps" />
+  <div class="nav-small">
+    <ul class="nav-small-content">
+      <li class="nav-si">비용안내</li>
+      <li class="nav-si">법인설립 후기</li>
+      <li class="nav-si">법인설립 FAQ</li>
+      <!-- <li>로그인</li> -->
+      <label class="nav-si label-hi" for="hi">
+        마이페이지
+        <img src="./images/v.svg" />
+      </label>
+      <input type="radio" name="faq" id="hi" />
+      <div class="nav-hi-content">
+        <li class="nav-hi">주문목록</li>
+        <li class="nav-hi">결제/환불내역</li>
+        <li class="nav-hi">법인 설립 정보</li>
+        <li class="nav-hi">계정 설정</li>
+        <li class="nav-hi">로그아웃</li>
+      </div>
+    </ul>
+  </div>
 
 
   <section id="f1">
@@ -50,8 +73,8 @@
       <p class="content-1">법인설립의 모든 것, 등기24에서 알려드립니다.</p>
 
       <ul class="faq-cont">
+        <input type="radio" name="faq" id="l1"/>
         <li class="li-cont">
-          <input type="checkbox" id="l1"/>
           <label class="faq-label" for="l1">
             <h4 class="faq-title">
               <div class="title-l">
@@ -70,8 +93,8 @@
           </div>
         </li>
 
+        <input type="radio" name="faq" id="l2" />
         <li class="li-cont">
-          <input type="checkbox" id="l2" />
           <label class="faq-label" for="l2">
             <h4 class="faq-title">
               <div class="title-l">
@@ -98,8 +121,8 @@
           </div>
         </li>
 
+        <input type="radio" name="faq" id="l3" />
         <li class="li-cont">
-          <input type="checkbox" id="l3" />
           <label class="faq-label" for="l3">
             <h4 class="faq-title">
               <div class="title-l">
@@ -118,8 +141,8 @@
           </div>
         </li>
 
+        <input type="radio" name="faq" id="l4" />
         <li class="li-cont">
-          <input type="checkbox" id="l4" />
           <label class="faq-label" for="l4">
             <h4 class="faq-title">
               <div class="title-l">
@@ -152,8 +175,8 @@
           </div>
         </li>
 
+        <input type="radio" name="faq" id="l5" />
         <li class="li-cont">
-          <input type="checkbox" id="l5" />
           <label class="faq-label" for="l5">
             <h4 class="faq-title">
               <div class="title-l">
@@ -173,8 +196,8 @@
           </div>
         </li>
 
+        <input type="radio" name="faq" id="l6" />
         <li class="li-cont">
-          <input type="checkbox" id="l6" />
           <label class="faq-label" for="l6">
             <h4 class="faq-title">
               <div class="title-l">
@@ -206,8 +229,8 @@
           </div>
         </li>
 
+        <input type="radio" name="faq" id="l7" />
         <li class="li-cont">
-          <input type="checkbox" id="l7" />
           <label class="faq-label" for="l7">
             <h4 class="faq-title">
               <div class="title-l">
@@ -316,12 +339,12 @@
       </div>
     </div>
 
-    <div class="container">
-      <div class="footer-m">
+    <div class="footer-m">
+      <div class="container">
         <div class="m-left">
           <h3 class="m-title">FAQ</h3>
           <p class="m-content">
-            법인 설립부터 운영 중 대표님이 주의하셔야 할 사항까지
+            법인 설립부터 운영 중 대표님이 주의하셔야 할 사항까지<br />
             등기24 공식블로그에서 모두 해결할 수 있습니다.
           </p>
           
@@ -342,22 +365,25 @@
       </div>
   
       <div class="footer-b">
-        <p class="b-content">
-          <span>상호 : 피엔케이 법률사무소 ㅣ </span>
-          <span>대표자명 : 박지환 변호사 ㅣ</span>
-          <span>개인정보책임 : 박지환 ㅣ</span>
-          <span>사업자등록번호 : 6550400545 ㅣ</span>
-          <span>이메일 : deungi24@naver.com</span>
+        <div class="container">
+          <p class="b-content">
+            <span>상호 : 피엔케이 법률사무소 ㅣ </span>
+            <span>대표자명 : 박지환 변호사 ㅣ</span>
+            <span>개인정보책임 : 박지환 ㅣ</span>
+            <span>사업자등록번호 : 6550400545 ㅣ</span>
+            <span>이메일 : deungi24@naver.com</span>
+            </p>
+          <p class="b-content">주소 : 경상남도 창원시 성산구 용지로169번길 15, 레이크펄스빌딩 10층, P&K법률사무소</p>
+    
+          <p class="b-copyright">
+            Copyright © Deungi24. All Rights Reserved.
           </p>
-        <p class="b-content">주소 : 경상남도 창원시 성산구 용지로169번길 15, 레이크펄스빌딩 10층, P&K법률사무소</p>
-  
-        <p class="b-copyright">
-          Copyright © Deungi24. All Rights Reserved.
-        </p>
+        </div>
       </div>
 
     </div>
   </footer>
+  
   
 </body>
 </html>

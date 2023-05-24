@@ -2,23 +2,41 @@
 @use "../components/index";
 
 #c1 {
+  .c1br {
+    display: none;
+    @include base.mq-breakpoint-down(sm) {
+      display: block;
+    }
+  }
   text-align: center;
-  padding-top: 6rem;
+  padding-top: 18rem;
   .service-cont {
-    margin-top: 6rem;
+    margin-top: 4.8rem;
   }
   position: relative;
+  .content-1 {
+    margin-top: 0.4rem;
+  }
 }
 
 #c2 {
   padding-top: 12rem;
   padding-bottom: 8rem;
+  @include base.mq-breakpoint-down(sm) {
+    padding-top: 8rem;
+  }
+
+  .container {
+    @include base.mq-breakpoint-down(sm) {
+      padding-left: 2.4rem;
+      padding-right: 2.4rem;
+    }
+  }
 
   .check {
     padding: 3.2rem 4rem;
     background: #FAFBFC; 
     border-radius: 12px;
-
   }
 
   .check-title {

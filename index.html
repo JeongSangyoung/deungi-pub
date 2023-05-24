@@ -7,11 +7,11 @@
   <title>Document</title>
   <link rel="stylesheet" href="./scss/Page_main/index.css">
 </head>
-
+<script type="module" src="./js/index.js"></script>
 <body>
   <nav id="nav">
     <div class="container">
-      <img src="./images/logo.svg" />
+      <img src="./images/logo.svg" class="nav-logo" />
       
       <ul class="nav-cont content-2">
         <li class="nav-item"><a class="ic">비용안내</a></li>
@@ -19,11 +19,10 @@
         <li class="nav-item"><a class="ic">법인설립 FAQ</a></li>
         <!-- <li class="nav-item"><a class="ic">로그인</a></li> -->
         <li class="nav-item vvv">
-          <input type="checkbox" id="nav-mp" />
-          <label class="nav-label" for="nav-mp">
+          <div class="nav-label">
             <a class="ic">마이페이지</a>
             <img class="nav-v" src="./images/v-white.svg" />
-          </label>
+          </div>
           <ul class="mp-content">
             <li>주문목록</li>
             <li>결제/환불내역</li>
@@ -37,11 +36,35 @@
           <button class="nav-btn">
             변경등기
           </button>
-          <img src="./images/menu.svg" />
+          <label class="mp-small-label" for="mps">
+            <img src="./images/menu.svg" />
+          </label>
         </li>
       </ul>
     </div>
   </nav>
+
+  <input type="checkbox" id="mps" />
+  <div class="nav-small">
+    <ul class="nav-small-content">
+      <li class="nav-si">비용안내</li>
+      <li class="nav-si">법인설립 후기</li>
+      <li class="nav-si">법인설립 FAQ</li>
+      <!-- <li>로그인</li> -->
+      <label class="nav-si label-hi" for="hi">
+        마이페이지
+        <img src="./images/v.svg" />
+      </label>
+      <input type="checkbox" id="hi" />
+      <div class="nav-hi-content">
+        <li class="nav-hi">주문목록</li>
+        <li class="nav-hi">결제/환불내역</li>
+        <li class="nav-hi">법인 설립 정보</li>
+        <li class="nav-hi">계정 설정</li>
+        <li class="nav-hi">로그아웃</li>
+      </div>
+    </ul>
+  </div>
 
 
   <section id="p1">
@@ -61,7 +84,8 @@
         </button>
       </div>
       <div class="right">
-        <img src="./images/main-desktop.png" />
+        <img class="main-img-desk" src="./images/main-desktop.png" />
+        <img class="main-img-mob" src="./images/main-mobile.png" />
       </div>
     </div>
   </section>
@@ -75,8 +99,8 @@
           <img src="./images/point1.png" />
           <h4 class="title-2">방문·서류 없이 온라인 5분 신청</h4>
           <p class="content-2">
-            법무사 직접 찾아가지 마세요.
-            온라인으로 5분 만에 신청하고 카톡과 전화로
+            법무사 직접 찾아가지 마세요.<br />
+            온라인으로 5분 만에 신청하고 카톡과 전화로 <br />
             언제든 상담 가능합니다.
           </p>
         </li>
@@ -85,7 +109,7 @@
           <img src="./images/point2.png" />
           <h4 class="title-2">등기 전문 변호사 100% 직접 진행</h4>
           <p class="content-2">
-            대한민국 1등 법인설립 전문 서비스로 서울대
+            대한민국 1등 법인설립 전문 서비스로 서울대<br />
             출신 ‘등기 전문 변호사'가 직접 진행합니다.
           </p>
         </li>
@@ -94,7 +118,7 @@
           <img src="./images/point3.png" />
           <h4 class="title-2">평균 3.2일 만에 법인설립 완료</h4>
           <p class="content-2">
-            서류 구비, 직접 방문으로 시간 낭비하지 마세요.
+            서류 구비, 직접 방문으로 시간 낭비하지 마세요.<br />
             등기24에 신청하면 평균 3.2일 만에 완료됩니다.
           </p>
         </li>
@@ -177,7 +201,7 @@
 
   <section id="p4">
     <h2 class="title-1">쉽고 빠른법인 설립</h2>
-    <p class="content-1">법인설립 전문 등기24에서 최고의 서비스를 경험하세요.</p>
+    <p class="content-1">법인설립 전문 등기24에서<br class="p4br" /> 최고의 서비스를 경험하세요.</p>
     <button class="apply-btn">
       법인설립 신청하기
     </button>
@@ -196,12 +220,12 @@
         </div>
 
         <p class="content-1">
-          국내뿐만 아니라 해외 거주 대표님도
+          국내뿐만 아니라 해외 거주 대표님도<br />
           손쉽게 신청할 수 있습니다.
         </p>
-
+        <br />
         <p class="content-1">
-          빠르고 간편한 4단계 절차로 정확하게
+          빠르고 간편한 4단계 절차로 정확하게<br />
           법인설립이 완료됩니다.
         </p>
 
@@ -309,11 +333,11 @@
           법인설립 소개
         </h4>
         <h2 class="p7-title1 title-1">
-          100% 신뢰할 수 있는
+          100% 신뢰할 수 있는<br />
           <span class="color-text-red">법인설립 전문,</span> 등기24
         </h2>
         <p class="content-1">
-          서비스 소개부터 신청방법까지
+          서비스 소개부터 신청방법까지<br />
           등기 전문가들이 직접 설명해 드립니다.
         </p>
   
@@ -349,14 +373,17 @@
   <section id="p8">
     <h2 class="title-1">고객만족도 <span class="color-text-blue">4.8점 / 5점</span></h2>
     <p class="content-1">항상 최고의 서비스와 고객 경험을 제공하기 위해 노력하고 있습니다.</p>
+
+    <ul id="p8-slide-l"></ul>
+    <ul id="p8-slide-r"></ul>
   </section>
 
   <section id="p9">
     <div class="container">
       <h2 class="title-1">
-        오늘만 벌써 <span class="color-text-blue">137개</span> 법인이 설립되었습니다
+        오늘만 벌써 <span class="color-text-blue">137개</span><br class="p9br" /> 법인이 설립되었습니다
       </h2>
-      <p class="content-1">법인설립의 완벽한 파트너, 등기24와 함께 지금 신청하세요.</p>
+      <p class="content-1">법인설립의 완벽한 파트너,<br class="p9br" /> 등기24와 함께 지금 신청하세요.</p>
       <button class="apply-btn">
         법인설립 신청하기
       </button>
@@ -380,12 +407,12 @@
       </div>
     </div>
 
-    <div class="container">
-      <div class="footer-m">
+    <div class="footer-m">
+      <div class="container">
         <div class="m-left">
           <h3 class="m-title">FAQ</h3>
           <p class="m-content">
-            법인 설립부터 운영 중 대표님이 주의하셔야 할 사항까지
+            법인 설립부터 운영 중 대표님이 주의하셔야 할 사항까지<br />
             등기24 공식블로그에서 모두 해결할 수 있습니다.
           </p>
           
@@ -406,18 +433,20 @@
       </div>
   
       <div class="footer-b">
-        <p class="b-content">
-          <span>상호 : 피엔케이 법률사무소 ㅣ </span>
-          <span>대표자명 : 박지환 변호사 ㅣ</span>
-          <span>개인정보책임 : 박지환 ㅣ</span>
-          <span>사업자등록번호 : 6550400545 ㅣ</span>
-          <span>이메일 : deungi24@naver.com</span>
+        <div class="container">
+          <p class="b-content">
+            <span>상호 : 피엔케이 법률사무소 ㅣ </span>
+            <span>대표자명 : 박지환 변호사 ㅣ</span>
+            <span>개인정보책임 : 박지환 ㅣ</span>
+            <span>사업자등록번호 : 6550400545 ㅣ</span>
+            <span>이메일 : deungi24@naver.com</span>
+            </p>
+          <p class="b-content">주소 : 경상남도 창원시 성산구 용지로169번길 15, 레이크펄스빌딩 10층, P&K법률사무소</p>
+    
+          <p class="b-copyright">
+            Copyright © Deungi24. All Rights Reserved.
           </p>
-        <p class="b-content">주소 : 경상남도 창원시 성산구 용지로169번길 15, 레이크펄스빌딩 10층, P&K법률사무소</p>
-  
-        <p class="b-copyright">
-          Copyright © Deungi24. All Rights Reserved.
-        </p>
+        </div>
       </div>
 
     </div>

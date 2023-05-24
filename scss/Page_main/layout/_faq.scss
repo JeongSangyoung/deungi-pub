@@ -3,7 +3,7 @@
 
 #f1 {
   .container {
-    padding-top: 6rem;
+    padding-top: 12rem;
   }
   .title-1, .content-1 {
     text-align: center;
@@ -16,14 +16,20 @@
   input { display: none; }
   .li-cont {
     @include base.flex('column', 'center', '', 0);
-    padding: 3.2rem 2.4rem;
-    background: #FAFBFC;
+    padding: 2.4rem 3.2rem;
+
+    @include base.mq-breakpoint-down(sm) {
+      padding: 1.6rem;
+    }
+    
+    &:hover {
+      background: #FAFBFC;
+    }
     border-top: 2px solid rgba(238, 238, 238, 1);
   }
 
   .faq-label {
     width: 100%;
-    // padding-bottom: 2.4rem;
   }
   
   .faq-title {
@@ -37,6 +43,9 @@
     .title-l {
       @include base.flex('row', '', 'center', 1.6rem);
     }
+    @include base.mq-breakpoint-down(sm) {
+      font-size: 1.4rem;
+    }
     
   }
   .faq-content {
@@ -45,20 +54,28 @@
     overflow: hidden;
     padding-left: 5.6rem;
   }
-  input[type="checkbox"]:checked ~ .faq-content{
+  input[type="radio"]:checked + .li-cont .faq-content{
+    margin-top: 1.2rem;
     max-height: 100vh;
     height: auto;
     visibility: visible;
     opacity: 1;
-    transition: all 2s ease;
     * {
       opacity: 1;
     }
+    transition:  max-height 2s ease;
+    
+    @include base.mq-breakpoint-down(sm) {
+      padding-left: unset;
+    }
+  }
+  input[type="radio"]:checked + .li-cont{
+    background: #FAFBFC;
   }
   .img-v {
     transform: rotate(180deg);
   }
-  input[type="checkbox"]:checked + label .img-v {
+  input[type="radio"]:checked + .li-cont label .img-v {
     transform: rotate(0);
   }
 
@@ -82,7 +99,6 @@
     margin-top: 2.4rem;
     width :90%;
   }
-
 }
 
 #f2 {

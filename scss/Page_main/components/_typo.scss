@@ -39,7 +39,7 @@ Noto {
 
 .title-2 {
   font-family: 'GmarketSans';
-  font-size: 1.8rem;
+  font-size: clamp(1.6rem, 1.6vw, 1.8rem);
   line-height: 150%;
   color: #212121;
 }
