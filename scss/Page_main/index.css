@@ -810,10 +810,19 @@ footer .footer-b .container .b-copyright {
 }
 .tip-cards .tip-card {
   width: 33%;
-  min-height: 50rem;
+  min-height: 48rem;
   position: relative;
+  transition: all 0.6s ease;
   box-shadow: 2px 4px 18px rgba(169, 169, 169, 0.18);
   border-radius: 12px;
+}
+.tip-cards .tip-card:hover {
+  transform: translateY(-1.6rem);
+}
+@media screen and (max-width: 959.98px) {
+  .tip-cards .tip-card:hover {
+    transform: unset;
+  }
 }
 @media screen and (max-width: 959.98px) {
   .tip-cards .tip-card {
@@ -1551,6 +1560,9 @@ Noto {
 #f1 .title-1, #f1 .content-1 {
   text-align: center;
 }
+#f1 .content-1 {
+  margin-top: 0.8rem;
+}
 #f1 .faq-cont {
   margin-top: 4.8rem;
 }
@@ -1662,6 +1674,15 @@ Noto {
 }
 #f2 .title-1, #f2 .content-1 {
   text-align: center;
+}
+@media screen and (max-width: 959.98px) {
+  #f2 {
+    padding-top: 8rem;
+    padding-bottom: 8rem;
+  }
+}
+#f2 .content-1 {
+  margin-top: 0.8rem;
 }
 
 #f3 {

@@ -8,6 +8,9 @@
   .title-1, .content-1 {
     text-align: center;
   }
+  .content-1 {
+    margin-top: 0.8rem;
+  }
 
   .faq-cont {
     margin-top: 4.8rem;
@@ -107,6 +110,13 @@
   }
   padding-top: 12rem;
   padding-bottom: 12rem;
+  @include base.mq-breakpoint-down(sm) {
+    padding-top: 8rem;
+    padding-bottom: 8rem;
+  }
+  .content-1 {
+    margin-top: 0.8rem;
+  }
 }
 
 #f3 {

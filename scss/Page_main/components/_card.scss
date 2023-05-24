@@ -309,10 +309,21 @@
   @include base.mq-breakpoint-down(sm) {
     @include base.flex('column', '', 'center', 3rem);
   }
+  
   .tip-card {
     width: 33%;
-    min-height: 50rem;
+    min-height: 48rem;
     position: relative;
+
+    transition: all 0.6s ease;
+    &:hover {
+      transform: translateY(-1.6rem);
+    }
+    @include base.mq-breakpoint-down(sm) {
+      &:hover {
+        transform: unset;
+      }
+    }
 
     @include base.mq-breakpoint-down(sm) {
       max-width: 41rem;
