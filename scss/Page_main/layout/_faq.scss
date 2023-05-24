@@ -120,6 +120,18 @@
 }
 
 #f3 {
+  .container {
+    @include base.mq-breakpoint-down(sm) {
+      padding-left: 2.4rem;
+      padding-right: 2.4rem;
+    }
+  }
+  .f3br {
+    display :none;
+    @include base.mq-breakpoint-down(sm) {
+      display: block;
+    }
+  }
   padding-bottom: 8rem;
   .consult-cont {
     background: #F4F9FE;
@@ -127,6 +139,11 @@
     padding: 4.8rem 7.2rem;
 
     @include base.flex('row', 'space-between', 'center', 4rem);
+
+    @include base.mq-breakpoint-down(sm) {
+      flex-direction: column-reverse;
+      text-align: center;
+    }
   }
 
   .consult-title {
@@ -153,7 +170,7 @@
     line-height: 14px;
 
     padding: 0 2.4rem;
-    width: 16rem;
+    width: 24rem;
     height: 4.4rem;
 
     background: rgba(31, 111, 232, 0.1);

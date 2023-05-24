@@ -1688,6 +1688,20 @@ Noto {
 #f3 {
   padding-bottom: 8rem;
 }
+@media screen and (max-width: 959.98px) {
+  #f3 .container {
+    padding-left: 2.4rem;
+    padding-right: 2.4rem;
+  }
+}
+#f3 .f3br {
+  display: none;
+}
+@media screen and (max-width: 959.98px) {
+  #f3 .f3br {
+    display: block;
+  }
+}
 #f3 .consult-cont {
   background: #F4F9FE;
   border-radius: 12px;
@@ -1697,6 +1711,12 @@ Noto {
   justify-content: space-between;
   align-items: center;
   gap: 4rem;
+}
+@media screen and (max-width: 959.98px) {
+  #f3 .consult-cont {
+    flex-direction: column-reverse;
+    text-align: center;
+  }
 }
 #f3 .consult-title {
   font-family: "GmarketSans";
@@ -1720,7 +1740,7 @@ Noto {
   font-size: 14px;
   line-height: 14px;
   padding: 0 2.4rem;
-  width: 16rem;
+  width: 24rem;
   height: 4.4rem;
   background: rgba(31, 111, 232, 0.1);
   border: 1px solid #1F6FE8;
